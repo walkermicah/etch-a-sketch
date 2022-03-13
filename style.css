@@ -3,12 +3,24 @@ body {
   margin: 0px;
   padding: 20px;
   box-sizing: border-box;
-  /* background: url(./images/background-gradient.jpg);
-    background-size: cover;
-    font-family: "Roboto Mono", monospace;*/
+  background: url(./images/background.jpg);
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Amatic SC", cursive;
+  font-family: "Roboto Mono", monospace;
+}
+
+button {
+  font-family: inherit;
+  border-radius: 5px;
+}
+
+.frame,
+.grid,
+.menu {
+  border-radius: 35px;
 }
 
 .frame {
@@ -18,23 +30,25 @@ body {
   align-items: center;
   width: 850px;
   height: 650px;
-  border: 3px solid black;
-  border-radius: 35px;
+  border: 3px solid rgb(138, 138, 138);
+  /* background: radial-gradient(ellipse, #440000, #ff0000); */
+  background-color: black;
 }
 
 .grid {
   width: 750px;
   height: 525px;
-  border: 1px solid black;
-  border-radius: 35px;
+  border: 2px solid rgb(204, 200, 200);
+  background: rgb(150, 148, 148);
 }
 
 h1 {
   margin-top: 10px;
   margin-bottom: 10px;
+  color: rgb(168, 235, 255);
 }
 
-/*MENUS*/
+/*MENU*/
 .menu,
 .settings,
 .size-buttons,
@@ -46,6 +60,14 @@ h1 {
 .menu {
   gap: 45px;
   margin-left: 40px;
+  background-color: #000000;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+h2 {
+  color: rgb(168, 235, 255);
+  margin-top: 0;
 }
 
 .settings {
@@ -60,4 +82,35 @@ h1 {
 
 .buttons {
   display: flex;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.grey {
+  background-color: rgb(150, 148, 148);
+}
+
+.neon {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 238, 2),
+    rgb(255, 179, 14),
+    rgb(255, 43, 209),
+    rgb(22, 247, 255),
+    rgb(35, 255, 27)
+  );
+}
+
+.pastel {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 183, 245),
+    rgb(255, 207, 102),
+    rgb(155, 255, 185),
+    rgb(162, 252, 255),
+    rgb(234, 180, 255)
+  );
 }
