@@ -31,7 +31,6 @@ button {
   width: 850px;
   height: 650px;
   border: 3px solid rgb(138, 138, 138);
-  /* background: radial-gradient(ellipse, #440000, #ff0000); */
   background-color: black;
 }
 
@@ -74,6 +73,7 @@ h2 {
   align-items: center;
 }
 
+/* Buttons */
 .buttons,
 .size-buttons,
 .color-buttons {
@@ -84,16 +84,17 @@ h2 {
   display: flex;
 }
 
-.black {
+#black-bkg,
+#black-sketch {
   background-color: black;
   color: white;
 }
 
-.grey {
+#grey-bkg {
   background-color: rgb(150, 148, 148);
 }
 
-.neon {
+#neon-sketch {
   background-image: linear-gradient(
     to right,
     rgb(255, 238, 2),
@@ -104,7 +105,7 @@ h2 {
   );
 }
 
-.pastel {
+#pastel-sketch {
   background-image: linear-gradient(
     to right,
     rgb(255, 183, 245),
