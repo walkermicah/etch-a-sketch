@@ -59,9 +59,8 @@ h1 {
 .menu {
   gap: 45px;
   margin-left: 40px;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.555);
   padding: 20px;
-  border: 1px solid black;
 }
 
 h2 {
@@ -82,6 +81,10 @@ h2 {
 
 .buttons {
   display: flex;
+}
+
+.blue-btn {
+  background-color: rgb(198, 231, 241);
 }
 
 #black-bkg,
