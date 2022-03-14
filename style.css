@@ -37,7 +37,8 @@ button {
   width: 750px;
   height: 525px;
   border: 2px solid rgb(204, 200, 200);
-  background: rgb(150, 148, 148);
+  background-color: rgb(150, 148, 148);
+  display: flex;
 }
 
 h1 {
@@ -116,4 +117,16 @@ h2 {
     rgb(162, 252, 255),
     rgb(234, 180, 255)
   );
+}
+
+/* GRID */
+.grid-columns {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-columns,
+.grid-squares {
+  border: 1px solid black;
+  flex-grow: 1;
 }
