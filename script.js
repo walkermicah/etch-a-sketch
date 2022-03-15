@@ -4,16 +4,17 @@ const grid = document.querySelector(".grid");
 const blackBackgroundBtn = document.querySelector("#black-bkg");
 const whiteBackgroundBtn = document.querySelector("#white-bkg");
 const greyBackgroundBtn = document.querySelector("#grey-bkg");
+const sizeBtns = document.querySelectorAll(".size-btn");
 
-//Change grid size
+//GRID SIZE
 
-//function to create grid of divs
-function addDiv() {
-  for (let i = 0; i < 4; i++) {
+//create grid
+function addDiv(n) {
+  for (let i = 0; i < n; i++) {
     const newColumn = document.createElement("div");
     newColumn.classList.add("grid-columns");
 
-    for (let y = 0; y < 4; y++) {
+    for (let i = 0; i < n; i++) {
       const newSquare = document.createElement("div");
       newSquare.classList.add("grid-squares");
       newColumn.appendChild(newSquare);
@@ -22,22 +23,54 @@ function addDiv() {
   }
 }
 
-addDiv();
+addDiv(10);
 
-//create 16 divs
-//arrange the divs in a grid
+//user can change grid size using buttons
+sizeBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    addDiv(e.target.id);
+  });
+});
 
-//Change background color
+//GRID COLORS
+
+//change background color
+function changeBackground(bkgColor) {
+  grid.style.backgroundColor = bkgColor;
+}
+
+//make grid lines white
+function changeGridWhite() {
+  const divs = document.querySelectorAll(".grid div");
+  divs.forEach((div) => {
+    div.style.borderColor = "white";
+  });
+}
+
+//make grid lines black
+function changeGridBlack() {
+  const divs = document.querySelectorAll(".grid div");
+  divs.forEach((div) => {
+    div.style.borderColor = "black";
+  });
+}
+
+//link background and grid colors to buttons
 blackBackgroundBtn.addEventListener("click", () => {
-  grid.style.backgroundColor = "black";
+  changeBackground("black");
+  changeGridWhite();
 });
+
 whiteBackgroundBtn.addEventListener("click", () => {
-  grid.style.backgroundColor = "white";
+  changeBackground("white");
+  changeGridBlack();
 });
+
 greyBackgroundBtn.addEventListener("click", () => {
-  grid.style.backgroundColor = "rgb(150, 148, 148)";
+  changeBackground("rgb(150, 148, 148)");
+  changeGridBlack();
 });
 
-//Change sketch color
+//SKETCH COLOR
 
-//Erase button
+//ERASE
