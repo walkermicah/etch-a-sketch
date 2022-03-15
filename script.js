@@ -23,11 +23,19 @@ function addDiv(n) {
   }
 }
 
-addDiv(10);
+addDiv(30);
 
-//user can change grid size using buttons
+//clear grid before new one is created
+function clearGrid() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+}
+
+//buttons to change grid size
 sizeBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    clearGrid();
     addDiv(e.target.id);
   });
 });
@@ -41,16 +49,16 @@ function changeBackground(bkgColor) {
 
 //make grid lines white
 function changeGridWhite() {
-  const divs = document.querySelectorAll(".grid div");
-  divs.forEach((div) => {
+  const gridDivs = document.querySelectorAll(".grid div");
+  gridDivs.forEach((div) => {
     div.style.borderColor = "white";
   });
 }
 
 //make grid lines black
 function changeGridBlack() {
-  const divs = document.querySelectorAll(".grid div");
-  divs.forEach((div) => {
+  const gridDivs = document.querySelectorAll(".grid div");
+  gridDivs.forEach((div) => {
     div.style.borderColor = "black";
   });
 }
