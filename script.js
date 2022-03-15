@@ -37,6 +37,14 @@ sizeBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     clearGrid();
     addDiv(e.target.id);
+
+    //when background is black, grid remains white when size is changed
+    if (grid.style.backgroundColor === "black") {
+      const gridDivs = document.querySelectorAll(".grid div");
+      gridDivs.forEach((div) => {
+        div.style.borderColor = "white";
+      });
+    }
   });
 });
 
