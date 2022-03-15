@@ -6,8 +6,6 @@ const whiteBackgroundBtn = document.querySelector("#white-bkg");
 const greyBackgroundBtn = document.querySelector("#grey-bkg");
 const sizeBtns = document.querySelectorAll(".size-btn");
 
-//GRID SIZE
-
 //create grid
 function addDiv(n) {
   for (let i = 0; i < n; i++) {
@@ -24,31 +22,6 @@ function addDiv(n) {
 }
 
 addDiv(30);
-
-//clear grid before new one is created
-function clearGrid() {
-  while (grid.firstChild) {
-    grid.removeChild(grid.firstChild);
-  }
-}
-
-//buttons to change grid size
-sizeBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    clearGrid();
-    addDiv(e.target.id);
-
-    //when background is black, grid remains white when size is changed
-    if (grid.style.backgroundColor === "black") {
-      const gridDivs = document.querySelectorAll(".grid div");
-      gridDivs.forEach((div) => {
-        div.style.borderColor = "white";
-      });
-    }
-  });
-});
-
-//GRID COLORS
 
 //change background color
 function changeBackground(bkgColor) {
@@ -71,7 +44,27 @@ function changeGridBlack() {
   });
 }
 
-//link background and grid colors to buttons
+//CHANGE GRID SIZE
+//clear grid before new one is created
+function clearGrid() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+}
+
+//buttons to change grid size
+sizeBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    clearGrid();
+    addDiv(e.target.id);
+
+    //when background is black, grid remains white when size is changed
+    if (grid.style.backgroundColor === "black") changeGridWhite();
+  });
+});
+
+//CHANGE GRID COLORS
+//buttons to change background and grid colors
 blackBackgroundBtn.addEventListener("click", () => {
   changeBackground("black");
   changeGridWhite();
@@ -87,6 +80,15 @@ greyBackgroundBtn.addEventListener("click", () => {
   changeGridBlack();
 });
 
-//SKETCH COLOR
+//CHANGE SKETCH COLOR
+//read instructions
+//add black-sketch class (black background color)
+//apply black-sketch class on hover
+//make hover permanent
+//erase button to remove black-sketch class
+//add white-sketch class
+//write function to change color
+//add event listeners to black and white buttons
+//figure out how to get pastel and neon sketches
 
-//ERASE
+//ERASE SKETCH
