@@ -9,6 +9,7 @@ const blackSketchBtn = document.querySelector("#black-sketch");
 const whiteSketchBtn = document.querySelector("#white-sketch");
 const pastelSketchBtn = document.querySelector("#pastel-sketch");
 const neonSketchBtn = document.querySelector("#neon-sketch");
+const eraseBtn = document.querySelector("#erase");
 
 //create grid
 function addDiv(n) {
@@ -160,9 +161,21 @@ neonSketchBtn.addEventListener("click", () => {
 blackSketch();
 
 //ERASE SKETCH
+eraseBtn.addEventListener("click", () => {
+  const gridSquares = document.querySelectorAll(".grid div div");
+  gridSquares.forEach((div) => {
+    div.addEventListener("mouseover", () => {
+      div.classList.remove("neon-sketch");
+      div.classList.remove("white-sketch");
+      div.classList.remove("black-sketch");
+      div.classList.remove("pastel-sketch");
+    });
+  });
+});
 
-//add conditions to keep sketch colors when bkg color changes
+//CLEAR SKETCH
 
-//make erase button functional
-
+//to do:
+//make clear grid button
 //make neon and pastel buttons functional
+//highlight button currently in use
