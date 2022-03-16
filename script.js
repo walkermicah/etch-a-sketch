@@ -10,6 +10,7 @@ const whiteSketchBtn = document.querySelector("#white-sketch");
 const pastelSketchBtn = document.querySelector("#pastel-sketch");
 const neonSketchBtn = document.querySelector("#neon-sketch");
 const eraseBtn = document.querySelector("#erase");
+const clearBtn = document.querySelector("#clear");
 
 //create grid
 function addDiv(n) {
@@ -35,16 +36,16 @@ function changeBackground(bkgColor) {
 
 //make grid lines white
 function changeGridWhite() {
-  const gridDivs = document.querySelectorAll(".grid div");
-  gridDivs.forEach((div) => {
+  const gridLines = document.querySelectorAll(".grid div");
+  gridLines.forEach((div) => {
     div.style.borderColor = "white";
   });
 }
 
 //make grid lines black
 function changeGridBlack() {
-  const gridDivs = document.querySelectorAll(".grid div");
-  gridDivs.forEach((div) => {
+  const gridLines = document.querySelectorAll(".grid div");
+  gridLines.forEach((div) => {
     div.style.borderColor = "black";
   });
 }
@@ -78,11 +79,13 @@ sizeBtns.forEach((btn) => {
 blackBackgroundBtn.addEventListener("click", () => {
   changeBackground("black");
   changeGridWhite();
+  whiteSketch();
 });
 
 whiteBackgroundBtn.addEventListener("click", () => {
   changeBackground("white");
   changeGridBlack();
+  blackSketch();
 });
 
 greyBackgroundBtn.addEventListener("click", () => {
@@ -175,7 +178,27 @@ eraseBtn.addEventListener("click", () => {
 
 //CLEAR SKETCH
 
+clearBtn.addEventListener("click", () => {
+  const gridSquares = document.querySelectorAll(".grid div div");
+  gridSquares.forEach((div) => {
+    div.classList.remove("neon-sketch");
+    div.classList.remove("white-sketch");
+    div.classList.remove("black-sketch");
+    div.classList.remove("pastel-sketch");
+  });
+});
+
+// clearBtn.addEventListener("click", () => {
+//   if ((grid.style.backgroundColor = "black")) {
+//     const gridSquares = document.querySelectorAll(".grid div div");
+//     gridSquares.forEach((div) => {
+//       div.style.backgroundColor = "black";
+//     });
+// } else if ((grid.style.backgroundColor = "white")) {
+// } else {
+// }
+// });
+
 //to do:
-//make clear grid button
 //make neon and pastel buttons functional
 //highlight button currently in use
