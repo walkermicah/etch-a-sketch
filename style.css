@@ -130,3 +130,20 @@ h2 {
   border: 0.5px solid black;
   flex-grow: 1;
 }
+
+/* SKETCH */
+.black-sketch {
+  background-color: black;
+}
+
+.white-sketch {
+  background-color: white;
+}
+
+.pastel-sketch {
+  background-color: pink;
+}
+
+.neon-sketch {
+  background-color: yellowgreen;
+}
