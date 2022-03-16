@@ -99,7 +99,7 @@ h2 {
   background-color: rgb(150, 148, 148);
 }
 
-#neon-sketch {
+/* #neon-sketch {
   background-image: linear-gradient(
     to right,
     rgb(255, 238, 2),
@@ -119,6 +119,10 @@ h2 {
     rgb(162, 252, 255),
     rgb(234, 180, 255)
   );
+} */
+
+.hidden {
+  display: none;
 }
 
 /* GRID */
@@ -140,12 +144,4 @@ h2 {
 
 .white-sketch {
   background-color: white;
-}
-
-.pastel-sketch {
-  background-color: pink;
-}
-
-.neon-sketch {
-  background-color: yellowgreen;
 }

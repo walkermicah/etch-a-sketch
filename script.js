@@ -7,8 +7,6 @@ const greyBackgroundBtn = document.querySelector("#grey-bkg");
 const sizeBtns = document.querySelectorAll(".size-btn");
 const blackSketchBtn = document.querySelector("#black-sketch");
 const whiteSketchBtn = document.querySelector("#white-sketch");
-const pastelSketchBtn = document.querySelector("#pastel-sketch");
-const neonSketchBtn = document.querySelector("#neon-sketch");
 const eraseBtn = document.querySelector("#erase");
 const clearBtn = document.querySelector("#clear");
 
@@ -95,15 +93,13 @@ greyBackgroundBtn.addEventListener("click", () => {
 
 //CHANGE SKETCH COLOR
 
-//functions to sketch
+//functions to sketch in different colors
 function blackSketch() {
   const gridSquares = document.querySelectorAll(".grid div div");
   gridSquares.forEach((div) => {
     div.addEventListener("mouseover", () => {
       div.classList.add("black-sketch");
       div.classList.remove("white-sketch");
-      div.classList.remove("neon-sketch");
-      div.classList.remove("pastel-sketch");
     });
   });
 }
@@ -113,33 +109,7 @@ function whiteSketch() {
   gridSquares.forEach((div) => {
     div.addEventListener("mouseover", () => {
       div.classList.add("white-sketch");
-      div.classList.remove("neon-sketch");
       div.classList.remove("black-sketch");
-      div.classList.remove("pastel-sketch");
-    });
-  });
-}
-
-function pastelSketch() {
-  const gridSquares = document.querySelectorAll(".grid div div");
-  gridSquares.forEach((div) => {
-    div.addEventListener("mouseover", () => {
-      div.classList.add("pastel-sketch");
-      div.classList.remove("white-sketch");
-      div.classList.remove("black-sketch");
-      div.classList.remove("neon-sketch");
-    });
-  });
-}
-
-function neonSketch() {
-  const gridSquares = document.querySelectorAll(".grid div div");
-  gridSquares.forEach((div) => {
-    div.addEventListener("mouseover", () => {
-      div.classList.add("neon-sketch");
-      div.classList.remove("white-sketch");
-      div.classList.remove("black-sketch");
-      div.classList.remove("pastel-sketch");
     });
   });
 }
@@ -153,14 +123,6 @@ blackSketchBtn.addEventListener("click", () => {
   blackSketch();
 });
 
-pastelSketchBtn.addEventListener("click", () => {
-  pastelSketch();
-});
-
-neonSketchBtn.addEventListener("click", () => {
-  neonSketch();
-});
-
 blackSketch();
 
 //ERASE SKETCH
@@ -168,37 +130,21 @@ eraseBtn.addEventListener("click", () => {
   const gridSquares = document.querySelectorAll(".grid div div");
   gridSquares.forEach((div) => {
     div.addEventListener("mouseover", () => {
-      div.classList.remove("neon-sketch");
-      div.classList.remove("white-sketch");
-      div.classList.remove("black-sketch");
-      div.classList.remove("pastel-sketch");
+      div.classList.remove("white-sketch", "black-sketch");
     });
   });
 });
 
 //CLEAR SKETCH
-
 clearBtn.addEventListener("click", () => {
   const gridSquares = document.querySelectorAll(".grid div div");
   gridSquares.forEach((div) => {
-    div.classList.remove("neon-sketch");
-    div.classList.remove("white-sketch");
-    div.classList.remove("black-sketch");
-    div.classList.remove("pastel-sketch");
+    div.classList.remove("white-sketch", "black-sketch");
   });
+  //restart new sketch after old sketch is cleared
+  if (grid.style.backgroundColor === "black") {
+    whiteSketch();
+  } else {
+    blackSketch();
+  }
 });
-
-// clearBtn.addEventListener("click", () => {
-//   if ((grid.style.backgroundColor = "black")) {
-//     const gridSquares = document.querySelectorAll(".grid div div");
-//     gridSquares.forEach((div) => {
-//       div.style.backgroundColor = "black";
-//     });
-// } else if ((grid.style.backgroundColor = "white")) {
-// } else {
-// }
-// });
-
-//to do:
-//make neon and pastel buttons functional
-//highlight button currently in use
