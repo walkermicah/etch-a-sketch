@@ -75,11 +75,13 @@ h2 {
 /* Buttons */
 .buttons,
 .size-buttons,
-.color-buttons {
+.color-buttons,
+.reset-buttons {
   gap: 15px;
 }
 
-.buttons {
+.buttons,
+.reset-buttons {
   display: flex;
 }
 
